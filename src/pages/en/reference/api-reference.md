@@ -417,7 +417,7 @@ For example, suppose that you generate pages based off of data fetched from a re
 ```astro
 ---
 export async function getStaticPaths() {
-  const data = await fetch('...').then(response => response.json());
+  const data = await (await fetch('...')).json();
 
   return data.map((post) => {
     return {
